@@ -1,0 +1,71 @@
+.modalBackdrop {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000; padding: 1rem;
+}
+
+.modalContent {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 12px; width: 100%; max-width: 500px;
+}
+
+.modalHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem; border-bottom: 1px solid var(--cor-borda);
+}
+
+.modalHeader h2 {
+  font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; margin: 0;
+}
+
+.closeButton {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer;
+}
+
+.modalForm {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  font-weight: 600; display: block; margin-bottom: 0.5rem;
+}
+
+.formGroup input[type="file"] {
+  width: 100%; padding: 0.5rem; border: 2px dashed var(--cor-borda);
+  border-radius: 8px;
+}
+
+.imagePreview {
+  margin-top: 1rem; text-align: center;
+}
+
+.imagePreview img {
+  max-width: 200px; max-height: 200px; border-radius: 8px;
+}
+
+.modalActions {
+  display: flex; gap: 1rem; justify-content: flex-end;
+  padding: 1.5rem; border-top: 1px solid var(--cor-borda);
+}
+
+.cancelButton, .submitButton {
+  padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;
+  cursor: pointer; border: none;
+}
+
+.cancelButton {
+  background-color: var(--cor-fundo-principal); border: 2px solid var(--cor-borda);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, var(--cor-sucesso), #27a844); color: white;
+}
+
+.submitButton:disabled {
+  background: var(--cor-texto-secundario); cursor: not-allowed;
+}

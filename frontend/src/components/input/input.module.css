@@ -1,0 +1,15 @@
+.input{
+    background-color: #6C757D;
+    color: #fff;
+
+    border: none;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    width: 20rem;
+    height: 2rem;
+    
+}
+.input::placeholder {
+    color: #fff; 
+  };
+

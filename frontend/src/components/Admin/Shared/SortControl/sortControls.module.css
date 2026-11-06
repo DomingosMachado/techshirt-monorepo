@@ -1,0 +1,116 @@
+/* MOBILE FIRST - Controles de Ordenação */
+
+/* Container Mobile */
+.mobileSortContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 8px;
+  border: 1px solid var(--cor-borda);
+}
+
+.sortLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sortSelect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--cor-acao-primaria);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.15);
+}
+
+.sortSelect:hover {
+  border-color: var(--cor-acao-primaria);
+}
+
+/* Cabeçalho de tabela ordenável */
+.sortableHeader {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.sortableHeader:hover {
+  background-color: var(--cor-fundo-secundario);
+}
+
+.sortableHeader:focus {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: -3px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sortIcon {
+  font-size: 0.875rem;
+  color: var(--cor-texto-secundario);
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.sortableHeader:hover .sortIcon {
+  opacity: 1;
+}
+
+.sortIconActive {
+  font-size: 0.875rem;
+  color: var(--cor-acao-primaria);
+  opacity: 1;
+}
+
+/* TABLET - 768px+ */
+@media (min-width: 768px) {
+  .mobileSortContainer {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .sortLabel {
+    margin-bottom: 0;
+  }
+
+  .sortSelect {
+    width: auto;
+    min-width: 200px;
+  }
+}
+
+/* DESKTOP - 1024px+ */
+@media (min-width: 1024px) {
+  /* Esconder controles mobile no desktop */
+  .mobileSortContainer {
+    display: none;
+  }
+}

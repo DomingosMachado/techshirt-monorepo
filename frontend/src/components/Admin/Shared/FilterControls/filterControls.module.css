@@ -1,0 +1,160 @@
+/* MOBILE FIRST - Controles de Filtro */
+
+.filterContainer {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cor-borda);
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filterTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin: 0;
+}
+
+.filterIcon {
+  font-size: 1.25rem;
+  color: var(--cor-acao-primaria);
+}
+
+.clearFiltersButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: 1px solid var(--cor-erro);
+  color: var(--cor-erro);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearFiltersButton:hover {
+  background-color: var(--cor-erro);
+  color: white;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cor-texto-secundario);
+}
+
+.filterSelect,
+.filterInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.filterSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23495057' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+  outline: none;
+  border-color: var(--cor-acao-primaria);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.15);
+}
+
+.filterSelect:hover,
+.filterInput:hover {
+  border-color: var(--cor-acao-primaria);
+}
+
+.rangeInputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rangeInputs .filterInput {
+  flex: 1;
+}
+
+.rangeSeparator {
+  color: var(--cor-texto-secundario);
+  font-weight: 500;
+}
+
+.activeFiltersInfo {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.activeFiltersText {
+  font-size: 0.85rem;
+  color: var(--cor-texto-secundario);
+  font-weight: 500;
+}
+
+/* TABLET - 768px+ */
+@media (min-width: 768px) {
+  .filterContainer {
+    padding: 1.5rem;
+  }
+
+  .filterGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* DESKTOP - 1024px+ */
+@media (min-width: 1024px) {
+  .filterGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filterTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* DESKTOP LARGO - 1400px+ */
+@media (min-width: 1400px) {
+  .filterGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,14 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--cor-texto-principal);
+}

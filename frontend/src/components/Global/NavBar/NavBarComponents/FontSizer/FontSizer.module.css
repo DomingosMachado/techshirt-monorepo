@@ -1,0 +1,30 @@
+.fontSizerContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--cor-fundo-principal);
+  border: 1px solid var(--cor-borda);
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.fontSizerContainer button {
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-principal);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+.fontSizerContainer button:hover {
+  background-color: var(--cor-acao-primaria);
+  color: #fff;
+}

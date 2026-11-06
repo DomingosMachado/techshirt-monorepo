@@ -1,0 +1,9 @@
+.particles-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh; /* ← Isso resolve de vez */
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+}

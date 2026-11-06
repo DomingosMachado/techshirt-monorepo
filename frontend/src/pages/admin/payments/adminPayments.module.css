@@ -1,0 +1,185 @@
+/* CONTAINER PRINCIPAL */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--cor-texto-secundario);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* GRID DE PAGAMENTOS - MODIFICADO PARA UM CARD POR LINHA */
+.paymentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ESTADOS DE LOADING E ERRO */
+.loadingContainer,
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--cor-borda);
+  border-left-color: var(--cor-acao-primaria);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingContainer p,
+.errorContainer p {
+  color: var(--cor-texto-secundario);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.errorText {
+  color: var(--cor-erro);
+}
+
+/* ESTADO VAZIO */
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--cor-texto-secundario);
+}
+
+.emptyIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--cor-fundo-secundario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--cor-texto-secundario);
+}
+
+.emptyState h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin: 0 0 0.5rem 0;
+}
+
+.emptyState p {
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MODAL DE SUCESSO (Pode ser movido para um componente global de UI) */
+.smallModalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.smallModalContent {
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-principal);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: modalSlideIn 0.3s ease-out;
+  border: 1px solid var(--cor-borda);
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.smallModalContent svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--cor-sucesso);
+}
+
+/* RESPONSIVIDADE DA PÁGINA - MANTENDO UM CARD POR LINHA */
+@media (min-width: 768px) {
+  .container { padding: 1.5rem; }
+  .header h1 { font-size: 2rem; }
+  .paymentGrid { 
+    gap: 1.25rem; 
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container { padding: 2rem; }
+  .header { text-align: left; margin-bottom: 2.5rem; }
+  .header h1 { font-size: 2.25rem; }
+  .subtitle { text-align: left; margin-left: 0; }
+  .paymentGrid { 
+    gap: 1.5rem; 
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .paymentGrid { 
+    max-width: 1100px; 
+    gap: 2rem; 
+  }
+}

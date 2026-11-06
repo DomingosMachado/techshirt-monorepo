@@ -1,0 +1,229 @@
+.modalBackdrop {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); display: flex;
+  justify-content: center; align-items: center; z-index: 1000; padding: 1rem;
+}
+
+.modalContent {
+  background-color: var(--cor-fundo-secundario); border-radius: 12px;
+  width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto;
+}
+
+.modalHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem; border-bottom: 1px solid var(--cor-borda);
+}
+
+.modalHeader h2 {
+  font-family: "Space Grotesk", sans-serif; font-size: 1.5rem; margin: 0;
+  color: var(--cor-texto-principal);
+}
+
+.closeButton {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer;
+  color: var(--cor-texto-secundario);
+}
+
+.closeButton:hover {
+  color: var(--cor-texto-principal);
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.loadingContainer {
+  padding: 3rem; text-align: center;
+}
+
+.loadingSpinner {
+  width: 40px; height: 40px; border: 4px solid var(--cor-borda);
+  border-left-color: var(--cor-acao-primaria); border-radius: 50%;
+  animation: spin 1s linear infinite; margin: 0 auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.productInfo {
+  display: flex; gap: 1rem; margin-bottom: 2rem;
+  padding: 1rem; background-color: var(--cor-fundo-principal);
+  border-radius: 8px;
+}
+
+.productImageContainer {
+  width: 80px; height: 80px; border-radius: 8px;
+  overflow: hidden; flex-shrink: 0;
+}
+
+.productImage {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+.productDetails h3 {
+  font-family: "Space Grotesk", sans-serif; font-size: 1.1rem; margin: 0 0 0.5rem;
+  color: var(--cor-texto-principal);
+}
+
+.productPrice {
+  font-weight: 700; color: var(--cor-acao-primaria);
+}
+
+.stockSection h4 {
+  font-family: "Space Grotesk", sans-serif; font-size: 1.2rem; margin-bottom: 1rem;
+  color: var(--cor-texto-principal);
+}
+
+.stockGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem; margin-bottom: 1.5rem;
+}
+
+.stockItem {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 1rem; background-color: var(--cor-fundo-principal);
+  border-radius: 8px; border: 1px solid var(--cor-borda);
+}
+
+.sizeLabel {
+  font-family: "Space Grotesk", sans-serif; font-weight: 700; margin-bottom: 0.5rem;
+  color: var(--cor-texto-principal);
+}
+
+.stockInput {
+  width: 100%; padding: 0.75rem; border-radius: 6px;
+  border: 1px solid var(--cor-borda); text-align: center; font-weight: 600;
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+}
+
+.stockSummary {
+  padding: 1rem; border-left: 4px solid var(--cor-acao-primaria);
+  border-radius: 6px; background-color: rgba(25, 118, 210, 0.05);
+}
+
+.stockSummary p {
+  margin: 0;
+  color: var(--cor-texto-principal);
+}
+
+.modalActions {
+  display: flex; gap: 1rem; justify-content: flex-end;
+  padding: 1.5rem; border-top: 1px solid var(--cor-borda);
+}
+
+.cancelButton, .saveButton {
+  padding: 0.75rem 1.5rem; border-radius: 8px;
+  font-weight: 600; cursor: pointer; border: none;
+}
+
+.cancelButton {
+  background-color: var(--cor-fundo-principal); 
+  border: 2px solid var(--cor-borda);
+  color: var(--cor-texto-principal);
+}
+
+.cancelButton:hover {
+  background-color: var(--cor-borda);
+}
+
+.saveButton {
+  background: linear-gradient(135deg, var(--cor-sucesso), #27a844); color: white;
+}
+
+.saveButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.saveButton:disabled, .cancelButton:disabled {
+  background: var(--cor-texto-secundario); cursor: not-allowed;
+  transform: none; box-shadow: none; opacity: 0.7;
+}
+
+/* AJUSTES ESPECÍFICOS PARA TEMA ESCURO */
+body.dark-theme .modalContent {
+  background-color: #2D3748;
+}
+
+body.dark-theme .modalHeader {
+  border-bottom-color: #4A5568;
+}
+
+body.dark-theme .modalHeader h2 {
+  color: #F7FAFC;
+}
+
+body.dark-theme .closeButton {
+  color: #A0AEC0;
+}
+
+body.dark-theme .closeButton:hover {
+  color: #F7FAFC;
+}
+
+body.dark-theme .productInfo {
+  background-color: #374151;
+}
+
+body.dark-theme .productDetails h3 {
+  color: #F7FAFC;
+}
+
+body.dark-theme .productPrice {
+  color: #63B3ED;
+}
+
+body.dark-theme .stockSection h4 {
+  color: #F7FAFC;
+}
+
+body.dark-theme .stockItem {
+  background-color: #374151;
+  border-color: #4A5568;
+}
+
+body.dark-theme .sizeLabel {
+  color: #F7FAFC;
+}
+
+body.dark-theme .stockInput {
+  background-color: #2D3748;
+  border-color: #4A5568;
+  color: #F7FAFC;
+}
+
+body.dark-theme .stockInput:focus {
+  border-color: #63B3ED;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.1);
+}
+
+body.dark-theme .stockSummary {
+  background-color: rgba(99, 179, 237, 0.1);
+  border-left-color: #63B3ED;
+}
+
+body.dark-theme .stockSummary p {
+  color: #F7FAFC;
+}
+
+body.dark-theme .modalActions {
+  border-top-color: #4A5568;
+}
+
+body.dark-theme .cancelButton {
+  background-color: #374151;
+  border-color: #4A5568;
+  color: #F7FAFC;
+}
+
+body.dark-theme .cancelButton:hover {
+  background-color: #4A5568;
+  border-color: #6B7280;
+  color: #FFFFFF;
+}
+
+body.dark-theme .loadingSpinner {
+  border-color: #4A5568;
+  border-left-color: #63B3ED;
+}

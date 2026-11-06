@@ -1,0 +1,55 @@
+/* Mobile First - Experiência otimizada para trabalho mobile */
+.modalContent {
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-acao-primaria), var(--cor-acao-secundaria));
+  border-radius: 2px;
+}
+
+
+
+/* TABLET - 768px+ */
+@media (min-width: 768px) {
+  .modalContent {
+    padding: 1.5rem;
+    max-height: 80vh;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+}
+
+/* DESKTOP - 1024px+ */
+@media (min-width: 1024px) {
+  .modalContent {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}

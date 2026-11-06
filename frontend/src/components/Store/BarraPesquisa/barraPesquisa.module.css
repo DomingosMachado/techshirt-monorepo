@@ -1,0 +1,122 @@
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 3rem 0.875rem 1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-principal);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-height: 44px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--cor-acao-primaria);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input::placeholder {
+  color: var(--cor-texto-secundario);
+}
+
+/* Melhor suporte para input type="search" */
+.input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input[type="search"]::-webkit-search-decoration,
+.input[type="search"]::-webkit-search-cancel-button,
+.input[type="search"]::-webkit-search-results-button,
+.input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.botao {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--cor-texto-secundario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.botao:hover {
+  color: var(--cor-acao-primaria);
+  background-color: var(--cor-fundo-principal);
+}
+
+.botao:focus-visible {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+}
+
+/* Estados de erro */
+.input:invalid {
+  border-color: var(--cor-erro);
+}
+
+.input:invalid:focus {
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .input {
+    padding: 1rem 3.5rem 1rem 1.25rem;
+    font-size: 1.1rem;
+  }
+  
+  .botao {
+    right: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .input {
+    border-width: 3px;
+  }
+  
+  .input:focus {
+    border-width: 3px;
+  }
+}
+
+/* Movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .botao {
+    transition: none;
+  }
+}

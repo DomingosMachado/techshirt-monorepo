@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Autenticação de Dois Fatores Ativada - TechShirt</title>
+</head>
+<body style="margin:0; padding:0; background-color:#F8F9FA; font-family:Roboto, Arial, sans-serif; color:#212529;">
+<div style="max-width:600px; margin:0 auto; background-color:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+    <div style="padding:40px 20px 20px; text-align:center; background-color:#E9ECEF;">
+        <h1 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:26px; color:#0D6EFD; margin:0;">
+            Autenticação de 2 Fatores Ativada!
+        </h1>
+    </div>
+    <div style="padding:30px 20px; font-size:16px; line-height:1.5;">
+        <p>Olá, <strong>#{nome}</strong>!</p>
+        <p>Informamos que a autenticação de dois fatores foi ativada em sua conta na <strong>TechShirt</strong>.</p>
+        <p><strong>Detalhes:</strong></p>
+        <ul style="padding-left: 20px; margin: 16px 0;">
+            <li><strong>Data e Hora:</strong> #{dataHora}</li>
+            <li><strong>Dispositivo/Navegador:</strong> #{dispositivo}</li>
+        </ul>
+        <p><strong>Configure o Google Authenticator com os dados abaixo:</strong></p>
+        <p><strong>Chave Secreta:</strong> <span style="background:#f1f3f5; padding:5px 10px; border-radius:4px; display:inline-block;">#{chave}</span></p>
+        <p style="margin-top:20px;">Ou escaneie o QR Code:</p>
+        <div style="text-align:center; margin-top:10px;">
+            <img src="cid:qrcode-image" alt="QR Code para 2FA" width="200" />
+        </div>
+        <p style="margin-top:30px;">Se não foi você quem ativou essa função, recomendamos alterar sua senha imediatamente.</p>
+    </div>
+    <div style="text-align:center; padding:20px; font-size:14px; color:#6C757D;">
+        Qualquer dúvida, nossa equipe está pronta para ajudar.<br>
+        <strong>Equipe TechShirt</strong>
+    </div>
+</div>
+</body>
+</html>

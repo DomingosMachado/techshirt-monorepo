@@ -1,0 +1,264 @@
+.tableContainer {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda, #e9ecef);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.table {
+  display: none;
+}
+
+.mobileQRCodeList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.mobileQRCodeCard {
+  background-color: var(--cor-fundo-principal);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--cor-borda, #e9ecef);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.qrCodeHeader {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.qrCodeImageContainer {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--cor-fundo-secundario);
+  border: 2px solid var(--cor-borda);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qrCodeInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.qrCodeInfo h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin: 0 0 0.25rem 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qrCodeMeta {
+  margin-bottom: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--cor-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metaValue {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.qrCodeActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.qrCodeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.qrCodePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-secundario);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 4px;
+}
+
+.statusActive, .statusInactive {
+  padding: 0.375rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  white-space: nowrap;
+}
+
+.statusActive::before, .statusInactive::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.statusActive {
+  background-color: rgba(56, 142, 60, 0.15);
+  color: var(--cor-sucesso);
+  border: 1px solid var(--cor-sucesso);
+}
+
+.statusActive::before {
+  background-color: var(--cor-sucesso);
+}
+
+.statusInactive {
+  background-color: rgba(211, 47, 47, 0.15);
+  color: var(--cor-erro);
+  border: 1px solid var(--cor-erro);
+}
+
+.statusInactive::before {
+  background-color: var(--cor-erro);
+}
+
+.actionButton {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.editButton {
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acao-secundaria));
+  color: white;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.3);
+}
+
+.activateButton {
+  background: linear-gradient(135deg, var(--cor-sucesso), #27a844);
+  color: white;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.deactivateButton {
+  background: linear-gradient(135deg, var(--cor-erro), #c82333);
+  color: white;
+  box-shadow: 0 2px 8px rgba(211, 47, 47, 0.3);
+}
+
+.editButton:hover, .activateButton:hover, .deactivateButton:hover {
+  transform: translateY(-2px);
+}
+
+/* AJUSTES PARA TEMA ESCURO */
+body.dark-theme .mobileQRCodeCard {
+  background-color: #2D3748;
+  border-color: #4A5568;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .qrCodeImageContainer {
+  background-color: #374151;
+  border-color: #4A5568;
+}
+
+body.dark-theme .qrCodePlaceholder {
+  background-color: #374151;
+  color: #D1D5DB;
+}
+
+@media (min-width: 1024px) {
+  .mobileQRCodeList {
+    display: none;
+  }
+  .table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table th, .table td {
+    padding: 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda, #e9ecef);
+    vertical-align: middle;
+    color: var(--cor-texto-principal);
+  }
+  .table th {
+    background-color: var(--cor-fundo-principal);
+    font-weight: 700;
+    color: var(--cor-texto-principal);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+  
+  /* Ajustes para tema escuro na tabela */
+  body.dark-theme .table th {
+    background-color: #2D3748;
+    color: #F7FAFC;
+  }
+  
+  body.dark-theme .table td {
+    color: #F7FAFC;
+    border-bottom-color: #4A5568;
+  }
+  
+  .table .qrCodeImageContainer {
+    width: 50px;
+    height: 50px;
+  }
+  .urlCell {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .urlCell a {
+    color: var(--cor-acao-primaria);
+    text-decoration: none;
+  }
+  .urlCell a:hover {
+    text-decoration: underline;
+  }
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

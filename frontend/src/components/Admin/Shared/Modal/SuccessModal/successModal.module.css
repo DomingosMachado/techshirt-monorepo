@@ -1,0 +1,51 @@
+/* Remove o fundo que bloqueia a tela */
+.modalBackdrop {
+  position: fixed;
+  bottom: 20px; /* Posição na base da tela */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  pointer-events: none; /* Permite clicar através do backdrop */
+}
+
+/* Estilo do "toast" de notificação */
+.modalContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--cor-texto-principal, #212529);
+  color: var(--cor-fundo-principal, #ffffff);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  font-weight: 500;
+  pointer-events: all; /* Permite interação com o toast se necessário */
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+.modalContent svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--cor-sucesso, #2E7D32);
+}
+
+/* Animação para o modal aparecer e desaparecer */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}

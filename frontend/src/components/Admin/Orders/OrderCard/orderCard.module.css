@@ -1,0 +1,202 @@
+.mobileOrderCard {
+  background: var(--cor-fundo-principal);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobileOrderCard:hover {
+  border-color: var(--cor-acao-primaria);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.orderInfo h3 {
+  font-family: var(--font-family-headings, "Space Grotesk", sans-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin: 0 0 0.25rem 0;
+}
+
+.customerName {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  margin: 0;
+}
+
+.statusBadge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.statusBadge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusWaiting {
+  background-color: rgba(245, 127, 23, 0.1);
+  color: #F57F17;
+  border: 1px solid #F57F17;
+}
+.statusWaiting::before {
+  background-color: #F57F17;
+}
+
+.statusShipped {
+  background-color: rgba(13, 71, 161, 0.1);
+  color: var(--cor-acao-primaria);
+  border: 1px solid var(--cor-acao-primaria);
+}
+.statusShipped::before {
+  background-color: var(--cor-acao-primaria);
+}
+
+.statusCanceled {
+  background-color: rgba(198, 40, 40, 0.1);
+  color: var(--cor-erro);
+  border: 1px solid var(--cor-erro);
+}
+.statusCanceled::before {
+  background-color: var(--cor-erro);
+}
+
+.statusFinished {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: var(--cor-sucesso);
+  border: 1px solid var(--cor-sucesso);
+}
+.statusFinished::before {
+  background-color: var(--cor-sucesso);
+}
+
+.basicInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 1rem;
+}
+
+.orderMeta .metaLabel {
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 0.25rem;
+}
+
+.orderMeta .metaValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+}
+
+.dateInfo .dateValue {
+  font-size: 0.85rem;
+  color: var(--cor-texto-secundario);
+  font-weight: 500;
+  text-align: right;
+}
+
+.expandedDetails {
+  background-color: var(--cor-fundo-secundario);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--cor-borda);
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.detailRow:last-child {
+  margin-bottom: 0;
+}
+
+.detailLabel {
+  color: var(--cor-texto-secundario);
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.detailValue {
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 1.25rem;
+}
+
+.expandButton {
+  background: transparent;
+  border: 2px solid var(--cor-borda);
+  color: var(--cor-texto-secundario);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.expandButton:hover {
+  border-color: var(--cor-acao-primaria);
+  color: var(--cor-acao-primaria);
+}
+
+.statusSelectMobile {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 2px solid var(--cor-borda);
+  background-color: var(--cor-fundo-principal);
+  color: var(--cor-texto-principal);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.statusSelectMobile:focus {
+  outline: none;
+  border-color: var(--cor-acao-primaria);
+  box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.15);
+}

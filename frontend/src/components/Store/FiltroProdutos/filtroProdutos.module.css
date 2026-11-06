@@ -1,0 +1,437 @@
+.container {
+  background-color: var(--cor-fundo-secundario);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda, #e9ecef);
+  transition: all 0.3s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--cor-texto-principal);
+}
+
+.limparButton {
+  background: none;
+  border: none;
+  color: var(--cor-acao-primaria);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.limparButton:hover {
+  color: var(--cor-erro);
+}
+
+.filtroGrupo {
+  border-bottom: 1px solid var(--cor-borda, #dee2e6);
+}
+
+.filtroGrupo:last-child {
+  border-bottom: none;
+}
+
+.filtroTrigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem 0;
+  cursor: pointer;
+  text-align: left;
+  min-height: 44px;
+}
+
+.filtroLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--cor-texto-principal);
+}
+
+.chevronIcon {
+  transition: transform 0.3s ease-in-out;
+  color: var(--cor-texto-secundario);
+}
+
+.iconRotate {
+  transform: rotate(180deg);
+}
+
+.opcoesContainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.opcoesContainerAberto {
+  grid-template-rows: 1fr;
+}
+
+.opcoesWrapper {
+  min-height: 0;
+  padding-bottom: 1rem;
+}
+
+/* Fieldset para grupos de radio buttons e checkboxes */
+.fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Estilos para checkboxes */
+.opcaoCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.opcaoCheckbox:hover {
+  background-color: var(--cor-fundo-principal);
+}
+
+.opcaoCheckbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.checkboxCustom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cor-texto-secundario);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.checkboxCustom::after {
+  content: '';
+  width: 12px;
+  height: 7px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) scale(0);
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 3px;
+}
+
+.opcaoCheckbox span:not(.checkboxCustom) {
+  color: var(--cor-texto-secundario);
+  transition: color 0.2s ease;
+}
+
+.opcaoCheckbox input[type="checkbox"]:checked + .checkboxCustom {
+  background-color: var(--cor-acao-primaria);
+  border-color: var(--cor-acao-primaria);
+}
+
+.opcaoCheckbox input[type="checkbox"]:checked + .checkboxCustom::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+.opcaoCheckbox input[type="checkbox"]:checked ~ span:not(.checkboxCustom) {
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+}
+
+/* Estados de foco melhorados para checkboxes */
+.opcaoCheckbox input[type="checkbox"]:focus-visible + .checkboxCustom {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+}
+
+/* Estilos para radio buttons */
+.opcaoRadio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.opcaoRadio:hover {
+  background-color: var(--cor-fundo-principal);
+}
+
+.opcaoRadio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.radioCustom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--cor-texto-secundario);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.radioCustom::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--cor-acao-primaria);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.2s ease;
+}
+
+.opcaoRadio span {
+  color: var(--cor-texto-secundario);
+  transition: color 0.2s ease;
+}
+
+.opcaoRadio input[type="radio"]:checked + .radioCustom {
+  border-color: var(--cor-acao-primaria);
+}
+
+.opcaoRadio input[type="radio"]:checked + .radioCustom::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.opcaoRadio input[type="radio"]:checked ~ span {
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+}
+
+/* Estados de foco melhorados */
+.opcaoRadio input[type="radio"]:focus-visible + .radioCustom {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+}
+
+.filtroTrigger:focus-visible {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Mobile styles */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobileContainer {
+  width: 100%;
+  max-height: 90vh;
+  background-color: var(--cor-fundo-principal);
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+  padding: 1rem;
+  border: none;
+}
+
+.mobileContainer .header {
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cor-texto-principal);
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 4px;
+}
+
+.closeButton:focus-visible {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+}
+
+.filtrosList {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 4px; 
+}
+
+.mobileFooter {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.applyButton {
+  flex-grow: 1;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--cor-acao-primaria);
+  color: white;
+  border: 1px solid var(--cor-acao-primaria);
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.applyButton:hover {
+  background-color: #0b5ed7;
+}
+
+.applyButton:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 2px;
+}
+
+.limparButtonMobile {
+  flex-basis: 40%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--cor-fundo-secundario);
+  color: var(--cor-texto-principal);
+  border: 1px solid var(--cor-borda);
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+}
+
+.limparButtonMobile:hover:not(:disabled) {
+  background-color: var(--cor-fundo-principal);
+}
+
+.limparButtonMobile:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.limparButtonMobile:focus-visible {
+  outline: 3px solid var(--cor-acao-primaria);
+  outline-offset: 2px;
+}
+
+/* SR only - Screen Reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Desktop responsive */
+@media (min-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .header {
+    padding: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--cor-borda, #dee2e6);
+    padding-bottom: 1rem;
+  }
+
+  .filtroGrupo {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .filtroTrigger {
+    cursor: default;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .filtroTrigger:focus-visible {
+    outline: none; /* Remove outline no desktop onde não é clicável */
+  }
+
+  .filtroLabel {
+    margin: 0;
+  }
+
+  .chevronIcon {
+    display: none;
+  }
+
+  .opcoesContainer,
+  .opcoesContainerAberto {
+    grid-template-rows: 1fr;
+    overflow: visible;
+  }
+
+  .opcoesWrapper {
+    padding-bottom: 0;
+  }
+}

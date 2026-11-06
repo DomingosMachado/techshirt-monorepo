@@ -1,0 +1,440 @@
+.bgWrap {
+  background: linear-gradient(120deg, var(--cor-fundo-secundario) 60%, #e3e0f7 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.title span {
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contentSection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background: var(--cor-fundo-secundario);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(123, 31, 162, 0.08);
+  border: 1px solid var(--cor-borda);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(123, 31, 162, 0.12);
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  margin-bottom: 1.5rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.sectionTitleCenter {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cor-texto-principal);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: "Space Grotesk", sans-serif;
+  position: relative;
+}
+
+.sectionTitleCenter::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  border-radius: 2px;
+}
+
+.sectionText {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.sectionText:last-child {
+  margin-bottom: 0;
+}
+
+/* Seção de Valores */
+.valoresSection {
+  margin-bottom: 4rem;
+}
+
+.valoresGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.valorCard {
+  background: var(--cor-fundo-secundario);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(123, 31, 162, 0.08);
+  border: 1px solid var(--cor-borda);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.valorCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.valorCard:hover::before {
+  transform: scaleX(1);
+}
+
+.valorCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(123, 31, 162, 0.15);
+}
+
+.valorIcon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 0 8px 25px rgba(123, 31, 162, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.valorCard:hover .valorIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.valorTitulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.valorDescricao {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+}
+
+/* Seção de Princípios */
+.principiosSection {
+  margin-bottom: 4rem;
+}
+
+.principiosGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.principioCard {
+  background: var(--cor-fundo-secundario);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(123, 31, 162, 0.08);
+  border: 1px solid var(--cor-borda);
+  transition: all 0.3s ease;
+}
+
+.principioCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(123, 31, 162, 0.12);
+}
+
+.principioHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.principioIcon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.principioCard:hover .principioIcon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.principioTitulo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cor-texto-principal);
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.principioDescricao {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Seção Diferencial */
+.diferencialSection {
+  margin-bottom: 2rem;
+}
+
+.diferencialCard {
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acento-destaque));
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(123, 31, 162, 0.3);
+}
+
+.diferencialCard .sectionTitle {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.diferencialContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.diferencialItem {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.diferencialItem:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.diferencialItem strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem 2rem;
+  }
+
+  .heroSection {
+    margin-bottom: 5rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .contentSection {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .valoresGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .principiosGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .diferencialContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 4rem 2rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    max-width: 700px;
+  }
+
+  .card {
+    padding: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .principiosGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .principioCard {
+    text-align: center;
+  }
+
+  .principioHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+/* Dark theme */
+body.dark-theme .bgWrap {
+  background: linear-gradient(120deg, var(--cor-fundo-secundario) 60%, #2d235a 100%);
+}
+
+body.dark-theme .card,
+body.dark-theme .valorCard,
+body.dark-theme .principioCard {
+  background: var(--cor-fundo-principal);
+  box-shadow: 0 4px 20px rgba(123, 31, 162, 0.2);
+}
+
+body.dark-theme .card:hover,
+body.dark-theme .valorCard:hover,
+body.dark-theme .principioCard:hover {
+  box-shadow: 0 8px 30px rgba(123, 31, 162, 0.3);
+}
+
+body.dark-theme .title span {
+  background: linear-gradient(135deg, var(--cor-acento-destaque), var(--cor-acao-primaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.valorCard,
+.principioCard,
+.card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.valorCard:nth-child(1) { animation-delay: 0.1s; }
+.valorCard:nth-child(2) { animation-delay: 0.2s; }
+.valorCard:nth-child(3) { animation-delay: 0.3s; }
+
+.principioCard:nth-child(1) { animation-delay: 0.1s; }
+.principioCard:nth-child(2) { animation-delay: 0.2s; }
+.principioCard:nth-child(3) { animation-delay: 0.3s; }
+
+/* Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .valorCard,
+  .principioCard,
+  .card,
+  .valorIcon,
+  .principioIcon {
+    animation: none;
+    transition: none;
+  }
+  
+  .valorCard:hover,
+  .principioCard:hover,
+  .card:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,117 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--cor-fundo-principal);
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--cor-acao-primaria), var(--cor-acao-secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  max-width: 500px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.pesquisaContainer {
+  margin-bottom: 1.5rem;
+}
+
+.controlesMobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.botaoControle {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--cor-fundo-secundario);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cor-texto-principal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.botaoControle:hover {
+  background-color: var(--cor-fundo-principal);
+  border-color: var(--cor-acao-primaria);
+}
+
+.conteudoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar {
+  display: none;
+}
+
+.produtosContainer {
+  flex: 1;
+}
+
+.resultadosInfo {
+  margin-bottom: 1.5rem;
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+}
+
+.carregando {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: var(--cor-texto-secundario);
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+  .controlesMobile {
+    display: none;
+  }
+  .sidebar {
+    display: block;
+  }
+  .conteudoWrapper {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,20 @@
+# dependencies and build output
+node_modules/
+target/
+dist/
+build/
+
+# secrets and local config
+.env
+.env.*
+!.env.example
+backend/src/main/resources/firebase.json
+*.pem
+*.key
+
+# editors and OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

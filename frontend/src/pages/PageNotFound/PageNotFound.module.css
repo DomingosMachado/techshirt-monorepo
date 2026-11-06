@@ -1,0 +1,59 @@
+/* Wrapper garante que tudo ocupe a altura da tela */
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Particles ocupa toda a tela e fica atrás do conteúdo */
+.particles {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  display: block;
+  background-color: transparent;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 5rem 2rem;
+  color: var(--cor-texto-principal);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.paginaNaoEncontrada h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.paginaNaoEncontrada p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+
+.botaoVoltar {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-acao-primaria);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botaoVoltar:hover {
+  background-color: var(--cor-acento-destaque);
+  color: white !important; 
+}

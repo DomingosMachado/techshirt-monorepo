@@ -1,0 +1,9 @@
+{
+  "_comment": "Placeholder. Replace this file's contents with your own Firebase service account key and save it as firebase.json in this folder. firebase.json is git-ignored.",
+  "type": "service_account",
+  "project_id": "your-project-id",
+  "private_key_id": "REPLACE_ME",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nREPLACE_ME\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk@your-project-id.iam.gserviceaccount.com",
+  "client_id": "REPLACE_ME"
+}
